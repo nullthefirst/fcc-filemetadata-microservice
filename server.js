@@ -18,7 +18,9 @@ app.get('/api/hello', (req, res) => {
 });
 
 app.post('/api/fileanalyse', upload.single('upfile'), (req, res) => {
-  console.log(res.json());
+  const fileInfo = res.json().req.file;
+
+  console.log(fileInfo);
 });
 
 const port = process.env.PORT || 3000;
